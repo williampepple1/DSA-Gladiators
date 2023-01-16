@@ -3,3 +3,12 @@
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        foundElements = set()
+
+        for num in nums:
+            if num in foundElements:
+                return True
+            
+            foundElements.add(num)
+
+        return False
