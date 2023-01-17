@@ -17,3 +17,6 @@ class Solution:
                 l += 1
             r += 1
         return l
+
+    # Time - O(n)
+    # Space - O(1)
