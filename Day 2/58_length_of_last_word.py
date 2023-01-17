@@ -5,6 +5,9 @@
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         return len(s.split(' ')[-1])
+        
+        # Time -  O(n)
+        # Space - O(1)
 
         """
         Alternate Solution
@@ -14,4 +17,7 @@ class Solution:
             if s[i] == ' ':
                 return length - i
         return len(s)
+
+        Time - O(n)
+        Space - O(1)
         """
