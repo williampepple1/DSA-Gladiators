@@ -11,16 +11,30 @@
 class BrowserHistory:
 
     def __init__(self, homepage: str):
+        self.browser = [homepage]
+        self.pointer = 0
         
-
     def visit(self, url: str) -> None:
+        while self.pointer < len(self.browser) - 1:
+            self.browser.pop()
+
+        self.browser.append(url)
+        self.pointer += 1
         
 
     def back(self, steps: int) -> str:
-        
+        while steps > 0 and self.pointer > 0:
+            self.pointer -= 1
+            steps -= 1
 
-    def forward(self, steps: int) -> str:
+        return self.browser[self.pointer]
         
+    def forward(self, steps: int) -> str:
+        while steps > 0 and self.pointer < len(self.browser) - 1:
+            self.pointer += 1
+            steps -= 1
+
+        return self.browser[self.pointer]
 
 
 # Your BrowserHistory object will be instantiated and called as such:
