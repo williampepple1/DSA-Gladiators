@@ -2,6 +2,8 @@
 
 class Solution:
     def firstUniqChar(self, s: str) -> int:
+        if len(s) == 1:
+            return 0
         from collections import Counter
         cntr = Counter(s)
         for idx, ltr in enumerate(s):
