@@ -2,3 +2,14 @@
 
 class Solution:
     def firstUniqChar(self, s: str) -> int:
+        from collections import Counter
+        cntr = Counter(s)
+        for idx, ltr in enumerate(s):
+            if cntr.get(ltr) == 1:
+                return idx
+        return -2
+
+    """
+    Time - O(n)
+    Space - O(n)
+    """
