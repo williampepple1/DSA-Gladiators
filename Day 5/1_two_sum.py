@@ -6,4 +6,19 @@
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        remainderMap = {}
+
+        for idx, num in enumerate(nums):
+            if num in remainderMap:
+                return [remainderMap[num], idx]
+            remainder = target - num
+            remainderMap[remainder] = idx       
+        """
+        Time - O(n)
+        Space - O(n)
+        """
