@@ -1,5 +1,4 @@
-# Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -2
-import 
+# Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return 
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         count = Counter(s)
