@@ -9,17 +9,31 @@
 class MyHashSet:
 
     def __init__(self):
-        
+        self.number_of_buckets = 2500
+        self.set = [[] for _ in range(self.number_of_buckets)]
 
     def add(self, key: int) -> None:
-        
+        bucket = self.getBucket(key)
+
+        if key not in self.set[bucket]:
+            self.set[bucket].append(key)
 
     def remove(self, key: int) -> None:
-        
+        bucket = self.getBucket(key)
+
+        for idx, val in enumerate(self.set[bucket]):
+            if val == key:
+                self.set[bucket][idx] = -1
+                break
 
     def contains(self, key: int) -> bool:
-        
+        bucket = self.getBucket(key)
 
+        return key in self.set[bucket]
+
+    def getBucket(self, key):
+        return key % self.number_of_buckets
+        
 
 # Your MyHashSet object will be instantiated and called as such:
 # obj = MyHashSet()

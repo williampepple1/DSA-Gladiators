@@ -8,20 +8,38 @@
 # string forward(int steps) Move steps forward in history. If you can only forward x steps in the history and steps > x, you will forward only x steps. Return the current url after forwarding in history at most steps.
 
 
+class Node:
+    def __init__(self, val = None):
+        self.val = val
+        self.next = None
+        self.prev = None
+
 class BrowserHistory:
 
     def __init__(self, homepage: str):
-        
+        self._current = Node(homepage)
 
     def visit(self, url: str) -> None:
-        
+        toVisit = Node(url)
+
+        self._current.next, toVisit.prev = toVisit, self._current
+        self._current = self._current.next
 
     def back(self, steps: int) -> str:
-        
+        for i in range(steps):
+            if self._current.prev == None:
+                break
+            self._current = self._current.prev
+
+        return self._current.val
 
     def forward(self, steps: int) -> str:
-        
+        for i in range(steps):
+            if self._current.next == None:
+                break
+            self._current = self._current.next
 
+        return self._current.val
 
 # Your BrowserHistory object will be instantiated and called as such:
 # obj = BrowserHistory(homepage)
