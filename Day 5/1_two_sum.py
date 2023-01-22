@@ -6,4 +6,13 @@
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        remainderMap = {}
+
+        for idx, num in enumerate(nums):
+            if num in remainderMap:
+                return [idx, remainderMap[num]]
+            
+            remainderMap[target - num] = idx
         
+        return []
