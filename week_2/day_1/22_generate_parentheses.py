@@ -11,9 +11,29 @@ Input: n = 1
 Output: ["()"]
 """
 
-class Solution(object):
-    def generateParenthesis(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+
+        parenthesis = []
+        allParentheses = []
+
+        def backtrack(o, c):
+            if not o and not c:
+                allParentheses.append("".join(parenthesis))
+                return
+
+            if o:
+                parenthesis.append("(")
+                backtrack(o - 1, c)
+                parenthesis.pop()
+
+            if c > o:
+                parenthesis.append(")")
+                backtrack(o, c - 1)
+                parenthesis.pop()
+
+            return
+
+        backtrack(n, n)
+        return allParentheses
