@@ -12,18 +12,22 @@ space complexities for each question they solve, their branches should always be
 
 # Questions Solved
 
-* 155 - Minstack
-* 217 - Contains Duplicate
-* 26 - Remove Duplicates from sorted Array
-* 58 - Length of last word
-* 1244 - Design a leaderboard
-* 705 - Design HashSet
-* 1472 - Design Browser History
-* 3 - Longest Substring without repeating characters
-* 387 - First Unique Character
-* 1 - Two Sum
-* 242 - Valid Anagram
-* 42 - Trapping rainwater
-* 704 - Binary Search
-* 22 - Generate Parentheses
-* 739 - Daily Temperatures
+* Week 1:
+  * 155 - Minstack
+  * 217 - Contains Duplicate
+  * 26 - Remove Duplicates from sorted Array
+  * 58 - Length of last word
+  * 1244 - Design a leaderboard
+  * 705 - Design HashSet
+  * 1472 - Design Browser History
+  * 3 - Longest Substring without repeating characters
+  * 387 - First Unique Character
+  * 1 - Two Sum
+  * 242 - Valid Anagram
+  * 42 - Trapping rainwater
+  * 704 - Binary Search
+* Week 2:
+  * 22 - Generate Parentheses
+  * 739 - Daily Temperatures
+  * 424 - Longest Repeating Character Replacement
+  * 567 - Permutation in String
