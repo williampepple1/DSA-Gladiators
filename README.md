@@ -29,3 +29,6 @@ space complexities for each question they solve, their branches should always be
 * Week 2:
   * 22 - Generate Parentheses
   * 739 - Daily Temperatures
+  * 424 - Longest Repeating Character Replacement
+  * 567 - Permutation in String 
+  * 380 - Insert Delete GetRandom O(1)
