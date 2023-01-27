@@ -10,15 +10,34 @@
 class RandomizedSet:
 
     def __init__(self):
+        self.map = {}
+        self.arr = []
+        self.idx = 0
         
-
     def insert(self, val: int) -> bool:
-        
+        if val in self.arr:
+            return False
 
+        self.map[val] = self.idx
+        self.arr.append(val)
+        self.idx += 1
+        return True
+        
     def remove(self, val: int) -> bool:
-        
+        if val not in self.map:
+            return False
 
+        temp = self.arr[-1] #temp  = 9
+        idx = self.map[val]
+        self.arr[-1], self.arr[idx] = self.arr[idx], self.arr[-1]
+        self.map[temp] = idx
+        self.idx -= 1
+        del self.map[val]
+        self.arr.pop()
+        return True
     def getRandom(self) -> int:
+        rand = math.floor(random.random() * len(self.arr))
+        return self.arr[rand]
         
 
 
