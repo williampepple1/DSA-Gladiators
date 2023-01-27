@@ -32,3 +32,5 @@ space complexities for each question they solve, their branches should always be
   * 424 - Longest Repeating Character Replacement
   * 567 - Permutation in String 
   * 380 - Insert Delete GetRandom O(1)
+  * 56 - Merge Intervals
+  * 2 - Add Two numbers
