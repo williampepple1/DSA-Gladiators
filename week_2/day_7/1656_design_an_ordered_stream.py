@@ -11,10 +11,18 @@
 class OrderedStream:
 
     def __init__(self, n: int):
-
-        
+        self.map = {}
+        self.ptr = 1
 
     def insert(self, idKey: int, value: str) -> List[str]:
+        self.map[idKey] = value
+
+        temp = []
+        while self.ptr in self.map:
+            temp.append(self.map[self.ptr])
+            self.ptr += 1
+
+        return temp
   
         
 

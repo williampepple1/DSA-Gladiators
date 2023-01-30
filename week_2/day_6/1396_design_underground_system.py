@@ -22,14 +22,28 @@ class UndergroundSystem:
     #           27, Leyton, 10                   27, Waterloo, 20 (10)  
 
     def __init__(self):
-
+        self.checkInMap = {}
+        self.journeyMap = {}
         
     def checkIn(self, id: int, stationName: str, t: int) -> None:
+        self.checkInMap[id] = (stationName, t)
 
-    def checkOut(self, id: int, stationName: str, t: int) -> None:    
+    def checkOut(self, id: int, stationName: str, t: int) -> None:
+        startStation, startTime = self.checkInMap[id]
+        time = t - startTime
+        journey = (startStation, stationName)
 
+        if journey in self.journeyMap:
+            self.journeyMap[journey][0] += time
+            self.journeyMap[journey][1] += 1
+        else:
+            self.journeyMap[journey] = [time, 1] 
+        
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
+        journey = (startStation, endStation)
+        totalTime, count = self.journeyMap[journey]
+        return totalTime/count
   
 
 
