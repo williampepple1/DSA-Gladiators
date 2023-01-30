@@ -34,3 +34,7 @@ space complexities for each question they solve, their branches should always be
   * 380 - Insert Delete GetRandom O(1)
   * 56 - Merge Intervals
   * 2 - Add Two numbers
+* Week 2:
+  * 146 - LRU Cache
+  * 98 - Validate Binary Search Tree
+  * 108 - Convert Sorted Array to Binary Search Tree
