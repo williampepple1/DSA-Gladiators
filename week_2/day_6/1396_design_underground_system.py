@@ -17,23 +17,32 @@
 
 class UndergroundSystem:
 
-    #Check In : 45, Leyton, 3.        Check Out: 45, Waterloo, 15 (12)
+    # Check In : 45, Leyton, 3.        Check Out: 45, Waterloo, 15 (12)
     #           32, Paradise, 8                  32, Cambridge, 22 (14)
     #           27, Leyton, 10                   27, Waterloo, 20 (10)  
 
     def __init__(self):
+        self.checkInMap = {}
+        self.journeyMap = {}
 
-        
-    def checkIn(self, id: int, stationName: str, t: int) -> None:
+    def check_in(self, id: int, stationName: str, t: int) -> None:
+        self.checkInMap[id] = (stationName, t)
 
-    def checkOut(self, id: int, stationName: str, t: int) -> None:    
+    def check_out(self, id: int, stationName: str, t: int) -> None:
+        startStation, startTime = self.checkInMap[id]
+        time = t - startTime
+        journey = (startStation, stationName)
 
+        if journey in self.journeyMap:
+            self.journeyMap[journey][0] += time
+            self.journeyMap[journey][1] += 1
+        else:
+            self.journeyMap[journey] = [time, 1]
 
-    def getAverageTime(self, startStation: str, endStation: str) -> float:
-  
-
-
-        
+    def get_average_time(self, startStation: str, endStation: str) -> float:
+        journey = (startStation, endStation)
+        totalTime, count = self.journeyMap[journey]
+        return totalTime / count
 
 # Your UndergroundSystem object will be instantiated and called as such:
 # obj = UndergroundSystem()

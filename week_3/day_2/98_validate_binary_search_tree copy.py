@@ -28,6 +28,10 @@ Constraints:
 Link: https://leetcode.com/problems/validate-binary-search-tree/
 
 """
+import math
+from idlelib.tree import TreeNode
+from typing import Optional
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -37,3 +41,20 @@ Link: https://leetcode.com/problems/validate-binary-search-tree/
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
+        if root is None:
+            return root
+
+        stack = [(root, -math.inf, math.inf)]
+        while stack:
+            node, low, high = stack.pop()
+
+            if node.val <= low or node.val >= high:
+                return False
+
+            if node.left:
+                stack.append((node.left, low, node.val))
+            if node.right:
+                stack.append((node.right, node.val, high))
+
+        return True
