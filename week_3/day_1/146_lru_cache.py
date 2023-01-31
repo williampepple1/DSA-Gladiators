@@ -40,15 +40,30 @@ Link: https://leetcode.com/problems/lru-cache/
 
 
 class LRUCache:
-
+    import collections
+    from collections import OrderedDict
     def __init__(self, capacity: int):
+        self.store = OrderedDict()
+        self.capacity = capacity
         
 
     def get(self, key: int) -> int:
-        
+        if key not in self.store:
+            return -1
+        val = self.store.pop(key)
+        self.store[key] = val
+        return val
+    
 
     def put(self, key: int, value: int) -> None:
-        
+        if key in self.store:
+            self.store.pop(key)
+        else:
+            if self.capacity>0:
+                self.capacity-=1
+            else:
+                self.store.popitem(last = False)
+        self.store[key] = value
 
 
 # Your LRUCache object will be instantiated and called as such:
