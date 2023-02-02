@@ -34,9 +34,12 @@ space complexities for each question they solve, their branches should always be
   * 380 - Insert Delete GetRandom O(1)
   * 56 - Merge Intervals
   * 2 - Add Two numbers
+  * 1396 - Design Underground System
+  * 1655 - Design an Ordered Stream
 * Week 2:
   * 146 - LRU Cache
   * 98 - Validate Binary Search Tree
   * 108 - Convert Sorted Array to Binary Search Tree
   * 14 - Longest Common Prefix
   * 1823 - Find the Winner of the Circular Game
+  
