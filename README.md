@@ -44,5 +44,7 @@ space complexities for each question they solve, their branches should always be
   * 1823 - Find the Winner of the Circular Game
   * 399 - Evaluate Division
   * 35 - Search Insert Position
+  * 117 - Populating Next Right Pointers in Each Node II
+  * 1290 - Convert Binary Number in a Linked List to Integer
   
   
