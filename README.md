@@ -48,5 +48,5 @@ space complexities for each question they solve, their branches should always be
   * 1290 - Convert Binary Number in a Linked List to Integer
   * 611 - Valid Triangle Number
   * 79 - Word Search
-  
-  
+* Week 4:
+  * 84 - Largest Rectangle in Histogram
