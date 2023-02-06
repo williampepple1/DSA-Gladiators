@@ -39,3 +39,28 @@ Link: https://leetcode.com/problems/word-search/
 
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
+        ROW = len(board)
+        COL = len(board[0])
+
+        for row in range(ROW):
+            for col in range(COL):
+                if board[row][col] == word[0] and self.helper(row, col, ROW, COL, board, word, 0):
+                    return True
+
+        return False
+
+    def helper(self, row, col, ROW, COL, board, word, i):
+        if i == len(word):
+            return True
+
+        if row in range(ROW) and col in range(COL) and board[row][col] == word[i]:
+            temp = board[row][col]
+            board[row][col] == "#"
+
+            direction = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
+            for r, c in direction:
+                if self.helper(r, c, ROW, COL, board, word, i+1):
+                    return True
+                
+            board[row][col] = temp
+            return False
