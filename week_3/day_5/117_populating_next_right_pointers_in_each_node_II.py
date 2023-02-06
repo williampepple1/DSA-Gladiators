@@ -45,6 +45,26 @@ Link: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-
 #         self.left = left
 #         self.right = right
 #         self.next = next
+import collections
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
+      if root is None: 
+        return root
+
+      queue = collections.deque([root])
+
+      while queue:
+        n = len(queue)
+
+        for i in range(n):
+          node = queue.popleft()
+          if i < n - 1:
+            node.next = queue[0]
+
+          if node.left:
+            queue.append(node.left)
+          if node.right:
+            queue.append(node.right)
+
+      return root
