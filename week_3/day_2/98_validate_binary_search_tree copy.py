@@ -35,5 +35,23 @@ Link: https://leetcode.com/problems/validate-binary-search-tree/
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import math
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        if root is None:
+            return root
+
+        stack = [(root, -math.inf, math.inf)]
+
+        while stack:
+            node, low, high = stack.pop()
+
+            if low >= node.val or node.val >= high:
+                return False
+
+            if node.left:
+                stack.append((node.left, low, node.val))
+            if node.right:
+                stack.append((node.right, node.val, high))
+
+        return True
