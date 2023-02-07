@@ -50,3 +50,5 @@ space complexities for each question they solve, their branches should always be
   * 79 - Word Search
 * Week 4:
   * 84 - Largest Rectangle in Histogram
+  * 49 - Group Anagrams
+
