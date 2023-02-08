@@ -51,4 +51,5 @@ space complexities for each question they solve, their branches should always be
 * Week 4:
   * 84 - Largest Rectangle in Histogram
   * 49 - Group Anagrams
+  * 36 - Valid Sudoku
 
