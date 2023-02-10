@@ -46,5 +46,13 @@ space complexities for each question they solve, their branches should always be
   * 35 - Search Insert Position
   * 117 - Populating Next Right Pointers in Each Node II
   * 1290 - Convert Binary Number in a Linked List to Integer
-  
-  
+  * 611 - Valid Triangle Number
+  * 79 - Word Search
+* Week 4:
+  * 84 - Largest Rectangle in Histogram
+  * 49 - Group Anagrams
+  * 36 - Valid Sudoku
+  * 200 - Number of Islands
+  * 1209 - Remove all Adjacent Duplicates II
+
+
