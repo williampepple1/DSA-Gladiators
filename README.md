@@ -50,3 +50,9 @@ space complexities for each question they solve, their branches should always be
   * 79 - Word Search
 * Week 4:
   * 84 - Largest Rectangle in Histogram
+  * 49 - Group Anagrams
+  * 36 - Valid Sudoku
+  * 200 - Number of Islands
+  * 1209 - Remove all Adjacent Duplicates II
+
+
