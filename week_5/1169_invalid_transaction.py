@@ -16,3 +16,30 @@ Link: https://leetcode.com/problems/invalid-transactions/
 N.B: Fom the input, go ahead to define your method and argument(s) you suggest it should take.
 
 '''
+import collections
+
+def invalidTransaction(self, transactions):
+    transaction = [t.split(",") for t in transactions]
+    transaction = sorted(transaction, key = lambda x: int(x[1]))
+    invalid = set()
+    store = collections.defaultdict(list)
+
+    for i, transact in enumerate(transaction):
+        name, time, amount, city = transact
+        time, amount = int(time), int(amount)
+
+        if amount > 1000:
+            invalid.add(i)
+
+        if name in store:
+            idx = len(store) - -1
+            
+            while idx >= 0 and time - int(transaction[store[name][idx]][1]):
+                if city != transaction[store[name][idx]][3]:
+                    invalid.add(i)
+                    invalid.add(store[name][idx])
+                j -= 1
+
+        store[name].append(i)
+
+    return [",".join(transaction[i]) for i in invalid]
