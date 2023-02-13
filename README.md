@@ -54,5 +54,6 @@ space complexities for each question they solve, their branches should always be
   * 36 - Valid Sudoku
   * 200 - Number of Islands
   * 1209 - Remove all Adjacent Duplicates II
+  * 1169 - Invalid Transactions
 
 
