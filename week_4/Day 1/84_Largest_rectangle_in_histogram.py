@@ -12,32 +12,32 @@ from typing import List
 
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        leftlimit = [0]*len(heights)
-        rightlimit = [0]*len(heights)
+        left_limit = [0] * len(heights)
+        right_limit = [0] * len(heights)
         stack = []
 
         for i in range(len(heights)):
             if not stack:
-                leftlimit[i] = 0
+                left_limit[i] = 0
             else:
-                while stack and  heights[stack[-1]]>=heights[i]:
+                while stack and heights[stack[-1]] >= heights[i]:
                     stack.pop()
-                top = stack[-1]+1 if stack else 0
-                leftlimit[i] = top
+                top = stack[-1] + 1 if stack else 0
+                left_limit[i] = top
             stack.append(i)
         stack = []
 
-        for i in range(len(heights)-1,-1,-1):
+        for i in range(len(heights) - 1, -1, -1):
             if not stack:
-                rightlimit[i] = len(heights)-1
+                right_limit[i] = len(heights) - 1
             else:
-                while stack and heights[stack[-1]]>=heights[i]:
+                while stack and heights[stack[-1]] >= heights[i]:
                     stack.pop()
-                top = stack[-1]-1 if stack else len(heights)-1
-                rightlimit[i] = top
+                top = stack[-1] - 1 if stack else len(heights) - 1
+                right_limit[i] = top
             stack.append(i)
-        maxarea = 0
+        max_area = 0
         for i in range(len(heights)):
-            area = (rightlimit[i]-leftlimit[i]+1)*heights[i]
-            maxarea = max(area,maxarea)
-        return maxarea
+            area = (right_limit[i] - left_limit[i] + 1) * heights[i]
+            max_area = max(area, max_area)
+        return max_area
