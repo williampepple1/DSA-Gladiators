@@ -54,5 +54,12 @@ space complexities for each question they solve, their branches should always be
   * 36 - Valid Sudoku
   * 200 - Number of Islands
   * 1209 - Remove all Adjacent Duplicates II
-
-
+* Week 5
+  * 1169 - Invalid Transactions
+  * 394 - Decode String
+  * 140 - Word Break II
+  * 253 - Meeting Room II
+  * 1029 - Two City Scheduling
+  * 1274 - Number of Ships in a Rectangle
+* Week 6
+  * 1249 - Minimum remove to make valid Parantheses
