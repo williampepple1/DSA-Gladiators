@@ -63,3 +63,4 @@ space complexities for each question they solve, their branches should always be
   * 1274 - Number of Ships in a Rectangle
 * Week 6
   * 1249 - Minimum remove to make valid Parantheses
+  * 20 - Valid Parentheses 
