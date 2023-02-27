@@ -1,26 +1,27 @@
-# Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
-
-# Implement the MyStack class:
-
-# void push(int x) Pushes element x to the top of the stack.
-# int pop() Removes the element on the top of the stack and returns it.
-# int top() Returns the element on the top of the stack.
-# boolean empty() Returns true if the stack is empty, false otherwise.
 
 
 
-class MyStack:
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
 
-    def __init__(self):
-        
+        if s == " ":
+            return True
 
-    def push(self, x: int) -> None:
-        
+        start = 0
+        end = len(s) - 1
 
-    def pop(self) -> int:
-        
+        while start <= end:
 
-    def top(self) -> int:
-        
+            if not s[start].isalnum():
+                start += 1
+            elif not s[end].isalnum():
+                end -= 1
 
-    def empty(self) -> bool:
+            elif s[start].lower() != s[end].lower():
+                print(s[start], s[end])
+                return False
+
+            else:
+                start += 1
+                end -= 1
+        return True
