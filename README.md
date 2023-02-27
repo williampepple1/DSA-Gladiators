@@ -69,3 +69,5 @@ space complexities for each question they solve, their branches should always be
   * 125 - Valid Palindrome
   * 225 - Implement Stack using Queues
   * 219 - Contains Duplicate II
+* Week 7
+  * 582- Kill Process
