@@ -7,7 +7,28 @@ Input: pid = [1,3,10,5], ppid = [3,0,5,3], kill = 5
 Output: [5,10]
 Explanation: The processes colored in red are the processes that should be killed.
 """
+import collections
+from typing import List
 
 
 class Solution:
     def killProcess(self, pid: List[int], ppid: List[int], kill: int) -> List[int]:
+        graph = collections.defaultdict(list)
+
+        for i, parent in enumerate(ppid):
+            graph[parent].append(pid[i])
+
+        queue = collections.deque([kill])
+
+        res = []
+        seen = set()
+
+        while queue:
+            node = queue.popleft()
+            res.append(node)
+            for element in graph[node]:
+                if element not in seen:
+                    seen.add(element)
+                    queue.append(element)
+
+        return res
