@@ -24,4 +24,15 @@ from typing import List
 
 class Solution:
     def unhappyFriends(self, n: int, preferences: List[List[int]], pairs: List[List[int]]) -> int:
-        pass
+        for x, y in pairs:
+            dict[x] = set(preferences[x][:preferences[x].index(y)])
+            dict[y] = set(preferences[y][:preferences[y].index(x)])
+
+        result = 0
+
+        for x in dict:
+            for y in dict[x]:
+                if x in dict[y]:
+                    result += 1
+                    break
+        return result
